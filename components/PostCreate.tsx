@@ -17,6 +17,8 @@ const PostCreate = (props: PropsType) => {
     }
     const handleClick = () => {
         props.addPostThunk(title, body);
+        setTitle("");
+        setBody("");
         alert("Posted!")
 
     }
@@ -30,11 +32,11 @@ const PostCreate = (props: PropsType) => {
                          src={"https://www.accfb.org/wp-content/uploads/2018/06/Blog-icon.png"}/>
                 </div>
                 <div>
-                    <textarea onChange={handleChangeTitle} className={pcr.textAreaTitle} rows={1} cols={50}
+                    <textarea onChange={handleChangeTitle} value={title} className={pcr.textAreaTitle} rows={1} cols={50}
                               placeholder={"Enter title"}/>
                 </div>
                 <div>
-                    <textarea onChange={handleChangeDescr} className={pcr.textArea} placeholder={"Enter Description"}/>
+                    <textarea onChange={handleChangeDescr} value={body} className={pcr.textArea} placeholder={"Enter Description"}/>
                 </div>
                 <div>
                     <button onClick={handleClick} className={pcr.but}>Post</button>
