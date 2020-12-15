@@ -28,7 +28,6 @@ const PostsContainer: React.FC<PropsTypePosts> = (props: any) => {
     })
 
     useEffect(() => {
-
         if (props.arrayPosts.length < 1) props.setPostsThunk()
     }, [])
 
